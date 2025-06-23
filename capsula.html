@@ -1,0 +1,108 @@
+<section id="capsula">
+  <div class="container">
+    <article class="capsula">
+      <h2>📦 Cápsula del Tiempo – <em>Mi voz en el silencio</em></h2>
+      <p><strong>“¡Bienvenido a tu cápsula del tiempo! Aquí vas a guardar una parte de ti. Imagina que estás en un lugar donde no puedes hablar con nadie por un tiempo. Pero tienes esta cápsula mágica para expresar lo que sientes.”</strong></p>
+
+      <h3>📖 Escribe tu carta</h3>
+      <textarea rows="6" placeholder="¿Qué es lo que más extrañas? ¿Qué piensas todos los días? ¿Qué te ayuda a sentirte mejor? ¿Qué le dirías a tu 'yo del futuro'?"></textarea>
+      <button onclick="sellarCapsula()">📩 Cerrar la carta y guardarla</button>
+
+      <h3>🎨 Dibuja tu estado de ánimo</h3>
+      <canvas id="drawCanvas" height="200"></canvas>
+      <div class="canvas-tools">
+        <label>Color: <input type="color" id="colorPicker" value="#3d5a80"></label>
+        <label>Grosor: <input type="range" id="brushSize" min="1" max="10" value="3"></label>
+        <button onclick="clearCanvas()">🧼 Borrar</button>
+      </div>
+
+      <h3>💖 ¿Cómo te sientes?</h3>
+      <div class="emotion-selector">
+        <span title="Triste">😢</span>
+        <span title="Esperanzado">😊</span>
+        <span title="Enojado">😡</span>
+        <span title="Confundido">😕</span>
+        <span title="En calma">😌</span>
+      </div>
+
+      <button style="margin-top:2rem" onclick="sellarCapsula()">🎁 Sellar mi cápsula</button>
+
+      <div id="sealMessage" style="display:none; margin-top:2rem; background:#fff8e1; border:2px solid #ffcb77; padding:1rem; border-radius:8px; text-align:center; font-weight:bold;">
+        ¡Tu cápsula ha sido sellada! 🌟 Puedes volver a abrirla cuando estés listo para recordarte lo fuerte que fuiste.
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+  .capsula {
+    background: #ffffffcc;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #bbb;
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    background-color: #eaf6f6;
+  }
+
+  textarea, canvas {
+    width: 100%;
+    border: 2px dashed #98c1d9;
+    border-radius: 8px;
+    background-color: #f1faff;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .canvas-tools, .emotion-selector {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+
+  .emotion-selector span {
+    cursor: pointer;
+    font-size: 2rem;
+    transition: transform 0.2s;
+  }
+
+  .emotion-selector span:hover {
+    transform: scale(1.2);
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById('drawCanvas');
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
+
+  canvas.addEventListener('mousedown', () => drawing = true);
+  canvas.addEventListener('mouseup', () => {
+    drawing = false;
+    ctx.beginPath();
+  });
+  canvas.addEventListener('mouseout', () => drawing = false);
+
+  canvas.addEventListener('mousemove', draw);
+
+  function draw(e) {
+    if (!drawing) return;
+    ctx.lineWidth = document.getElementById('brushSize').value;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = document.getElementById('colorPicker').value;
+    const rect = canvas.getBoundingClientRect();
+    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+  }
+
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  function sellarCapsula() {
+    document.getElementById('sealMessage').style.display = 'block';
+  }
+</script>
