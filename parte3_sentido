@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sentido Pedagógico del Taller</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <style>
+    body {
+      margin: 0;
+      background: #f3f7fa;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      padding: 2rem;
+    }
+    .sentido-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #ffffffdd;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2e4a62;
+    }
+    blockquote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #81d4fa;
+      padding-left: 1rem;
+      margin: 1rem 0;
+    }
+    ul {
+      list-style: square;
+    }
+  </style>
+</head>
+<body>
+
+<main class="sentido-container">
+  <h2>🌱 Escuchar también es enseñar</h2>
+  <p>
+    En las escuelas hablamos mucho. Enseñamos a leer, a escribir, a sumar, a restar… pero pocas veces nos detenemos a enseñar a escuchar de verdad.
+    Escuchar cuando alguien habla es fácil. Lo difícil es escuchar lo que no se dice.
+  </p>
+  <blockquote>
+    El silencio también comunica. Y a veces, es una llamada de ayuda.
+  </blockquote>
+  <p>
+    Este taller nace de esa certeza: que hay momentos en los que el silencio de un estudiante nos está pidiendo algo. No necesariamente una solución.
+    A veces, solo una presencia. Una mirada atenta. Un espacio donde sentirse acompañado, incluso sin tener que hablar.
+  </p>
+
+  <h2>💬 Un taller para sentir y pensar</h2>
+  <p>
+    La propuesta que aquí presentamos no es solo una serie de actividades. Es una invitación a entrar en el mundo emocional de nuestros estudiantes,
+    a conectar con sus vivencias y a habilitar otras formas de expresión más allá de la palabra oral.
+  </p>
+  <p>
+    Elegimos la metáfora del aislamiento porque todos, en algún momento, hemos sentido que estamos “en una isla”, lejos de los demás,
+    desconectados, sin saber cómo volver. Esa sensación, aunque dura, puede ser compartida, narrada y transformada colectivamente.
+  </p>
+
+  <h2>🎨 ¿Por qué una cápsula del tiempo?</h2>
+  <p>
+    Porque a veces necesitamos guardar lo que sentimos. No para esconderlo, sino para protegerlo.
+    Para volver a ello más adelante y recordar cómo nos sostuvimos, qué nos hizo fuertes, qué nos hizo humanos.
+  </p>
+  <blockquote>
+    La cápsula no es un trabajo más. Es un acto simbólico. Una promesa de volver a mirarnos con ternura.
+  </blockquote>
+
+  <h2>🧠 Este taller busca…</h2>
+  <ul>
+    <li>Hacer visible lo invisible.</li>
+    <li>Nombrar lo que a veces no sabemos cómo decir.</li>
+    <li>Validar el silencio como forma de expresión.</li>
+    <li>Crear comunidad desde la empatía.</li>
+    <li>Invitar a los adultos a acompañar, sin invadir.</li>
+    <li>Recordarnos que los vínculos también educan.</li>
+  </ul>
+</main>
+
+</body>
+</html>
