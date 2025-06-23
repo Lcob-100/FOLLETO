@@ -3,80 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Escuchar el Silencio – Folleto Plegable</title>
+  <title>Folleto Digital – Escuchar el Silencio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
   <style>
     body {
       margin: 0;
-      overflow-x: hidden;
+      background: #f9fafa;
       font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      scroll-behavior: smooth;
     }
 
     nav {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      background: #ffffffee;
-      backdrop-filter: blur(4px);
-      padding: 1rem;
       z-index: 1000;
+      background: #ffffffee;
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+      backdrop-filter: blur(4px);
+    }
+
+    nav ul {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 0.5rem;
-      border-bottom: 1px solid #ccc;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    nav button {
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 5px;
+    nav a {
+      text-decoration: none;
+      padding: 0.6rem 1rem;
       background: #e3f2fd;
       color: #1a237e;
-      cursor: pointer;
+      border-radius: 6px;
+      font-weight: 500;
     }
 
-    nav button:hover {
+    nav a:hover {
       background: #bbdefb;
     }
 
-    .folleto {
-      display: flex;
-      width: 700%;
-      transition: transform 0.5s ease-in-out;
-    }
-
     section {
-      flex: 0 0 100vw;
-      height: 100vh;
-      overflow-y: auto;
-      padding: 6rem 2rem 2rem;
-      box-sizing: border-box;
+      max-width: 1000px;
+      margin: 3rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
-    section:nth-child(odd) {
-      background: #f5faff;
-    }
-
-    section:nth-child(even) {
-      background: #fffdf8;
-    }
-
-    iframe {
-      width: 100%;
-      height: 90vh;
-      border: none;
-      border-radius: 8px;
-    }
-
-    h1 {
+    section h2 {
+      margin-top: 0;
       color: #2c3e50;
     }
 
+    blockquote {
+      font-style: italic;
+      border-left: 4px solid #81d4fa;
+      padding-left: 1rem;
+      color: #555;
+      margin: 1.5rem 0;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #777;
+    }
+
     @media (max-width: 768px) {
-      nav {
+      nav ul {
         flex-direction: column;
+        align-items: center;
       }
     }
   </style>
@@ -84,31 +90,93 @@
 <body>
 
 <nav>
-  <button onclick="goTo(0)">🏠 Portada</button>
-  <button onclick="goTo(1)">📘 Caso Laura</button>
-  <button onclick="goTo(2)">🌱 Sentido</button>
-  <button onclick="goTo(3)">📚 Taller</button>
-  <button onclick="goTo(4)">📦 Cápsula</button>
-  <button onclick="goTo(5)">🤝 Hablar</button>
-  <button onclick="goTo(6)">🧠 Recomendaciones</button>
+  <ul>
+    <li><a href="#portada">🏠 Portada</a></li>
+    <li><a href="#caso">📘 Caso Laura</a></li>
+    <li><a href="#sentido">🌱 Sentido</a></li>
+    <li><a href="#taller">📚 Taller</a></li>
+    <li><a href="#capsula">📦 Cápsula</a></li>
+    <li><a href="#hablar">🤝 Hablar</a></li>
+    <li><a href="#recomendaciones">🧠 Recomendaciones</a></li>
+  </ul>
 </nav>
 
-<div class="folleto" id="folleto">
-  <section><iframe src="parte1_portada.html"></iframe></section>
-  <section><iframe src="parte2_narrativa.html"></iframe></section>
-  <section><iframe src="parte3_sentido.html"></iframe></section>
-  <section><iframe src="parte4_taller.html"></iframe></section>
-  <section><iframe src="capsula.html"></iframe></section>
-  <section><iframe src="parte5_hablar.html"></iframe></section>
-  <section><iframe src="parte6_recomendaciones.html"></iframe></section>
-</div>
+<!-- Portada -->
+<section id="portada">
+  <h2>Escuchar el Silencio</h2>
+  <h3>Un espacio pedagógico para acompañar(nos)</h3>
+  <p>Una propuesta pedagógica para abordar el aislamiento emocional en el aula, desde la empatía, la creatividad y el poder de la escucha.</p>
+  <footer>Trabajo colaborativo presentado por:<br> Sebastián Rincón, Laura Olivares y Laura Barbosa</footer>
+</section>
 
-<script>
-  function goTo(index) {
-    const folleto = document.getElementById("folleto");
-    folleto.style.transform = `translateX(-${index * 100}vw)`;
-  }
-</script>
+<!-- Caso Laura -->
+<section id="caso">
+  <h2>🌸 ¿Qué pasa cuando una niña calla?</h2>
+  <p>Laura tiene 10 años... (contenido completo que ya escribimos sobre el caso de Laura)</p>
+  <h3>🎧 El desafío que enfrentamos</h3>
+  <blockquote>
+    ¿Qué podemos hacer para abrir un espacio de escucha verdadera?<br>
+    ¿Cómo cuidar lo que decimos... y lo que no decimos?
+  </blockquote>
+</section>
+
+<!-- Sentido Pedagógico -->
+<section id="sentido">
+  <h2>🌱 Escuchar también es enseñar</h2>
+  <p>En las escuelas hablamos mucho... (sentido del taller)</p>
+  <h3>💬 Un taller para sentir y pensar</h3>
+  <p>Este taller busca conectar emocionalmente y simbólicamente...</p>
+</section>
+
+<!-- Taller -->
+<section id="taller">
+  <h2>📚 Taller “Islas Invisibles”</h2>
+  <p>Duración: 1h 20min | Participantes: grupo completo</p>
+  <ul>
+    <li>1️⃣ Rompehielo: “Desperté en una isla”</li>
+    <li>2️⃣ ¿Qué es el aislamiento?</li>
+    <li>3️⃣ Escuchar otra historia</li>
+    <li>4️⃣ <strong><a href="#capsula">Ir a la cápsula</a></strong></li>
+    <li>5️⃣ Cierre reflexivo</li>
+  </ul>
+</section>
+
+<!-- Cápsula del tiempo -->
+<section id="capsula">
+  <h2>📦 Cápsula del Tiempo: “Mi voz en el silencio”</h2>
+  <p>
+    Esta cápsula es un espacio simbólico para guardar emociones. Puedes <a href="capsula.html" target="_blank">acceder aquí 🚀</a>.
+  </p>
+</section>
+
+<!-- Hablar con Laura -->
+<section id="hablar">
+  <h2>🤝 Hablar con Laura</h2>
+  <blockquote>“Hay silencios que no buscan ocultarse, solo necesitan que alguien los mire sin prisa.”</blockquote>
+  <ul>
+    <li>Acercamientos respetuosos y empáticos</li>
+    <li>Ofrecer canales no verbales</li>
+    <li>Estar sin forzar, acompañar sin invadir</li>
+  </ul>
+</section>
+
+<!-- Recomendaciones docentes -->
+<section id="recomendaciones">
+  <h2>🧠 Recomendaciones para docentes</h2>
+  <ul>
+    <li>💬 Escucha más allá de las palabras</li>
+    <li>🤲 No interpretes demasiado rápido</li>
+    <li>🕊️ Permite múltiples formas de expresión</li>
+    <li>🌱 Crea una atmósfera emocional segura</li>
+    <li>👁️‍🗨️ No estés solo en esto</li>
+    <li>✨ Valida el proceso más que el resultado</li>
+    <li>🧩 Integra esta experiencia a la práctica diaria</li>
+  </ul>
+</section>
+
+<footer>
+  © 2025 Folleto pedagógico – Escuchar el Silencio
+</footer>
 
 </body>
 </html>
