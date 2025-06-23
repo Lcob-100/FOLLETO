@@ -1,97 +1,112 @@
-<section id="capsula">
-  <div class="container">
-    <article class="capsula">
-      <h2>📦 Cápsula del Tiempo – <em>Mi voz en el silencio</em></h2>
-      <p><strong>“¡Bienvenido a tu cápsula del tiempo! Aquí vas a guardar una parte de ti. Imagina que estás en un lugar donde no puedes hablar con nadie por un tiempo. Pero tienes esta cápsula mágica para expresar lo que sientes.”</strong></p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cápsula del Tiempo – Mi voz en el silencio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <style>
+    body {
+      background: linear-gradient(to right, #e0f7fa, #fce4ec);
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+    }
+    .capsula {
+      background: #ffffffdd;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: auto;
+    }
+    canvas {
+      border: 2px dashed #90caf9;
+      border-radius: 8px;
+      width: 100%;
+      height: 200px;
+    }
+    .emotion-selector span {
+      cursor: pointer;
+      font-size: 1.5rem;
+      margin: 0.25rem;
+      transition: transform 0.2s ease;
+    }
+    .emotion-selector span:hover {
+      transform: scale(1.3);
+    }
+    #message {
+      display: none;
+      background: #e6ffe6;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      text-align: center;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
 
-      <h3>📖 Escribe tu carta</h3>
-      <textarea rows="6" placeholder="¿Qué es lo que más extrañas? ¿Qué piensas todos los días? ¿Qué te ayuda a sentirte mejor? ¿Qué le dirías a tu 'yo del futuro'?"></textarea>
-      <button onclick="sellarCapsula()">📩 Cerrar la carta y guardarla</button>
+<main class="capsula">
+  <h1>📦 Cápsula del Tiempo – Mi voz en el silencio</h1>
+  <p><strong>Imagina que no puedes hablar con nadie por un tiempo. Esta cápsula mágica te permite expresar lo que sientes, piensas y esperas. Aquí puedes guardar un mensaje para ti mismo/a del futuro.</strong></p>
 
-      <h3>🎨 Dibuja tu estado de ánimo</h3>
-      <canvas id="drawCanvas" height="200"></canvas>
-      <div class="canvas-tools">
-        <label>Color: <input type="color" id="colorPicker" value="#3d5a80"></label>
-        <label>Grosor: <input type="range" id="brushSize" min="1" max="10" value="3"></label>
-        <button onclick="clearCanvas()">🧼 Borrar</button>
-      </div>
+  <form id="capsulaForm">
+    <label for="nombre">🧑 Tu nombre</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required />
 
-      <h3>💖 ¿Cómo te sientes?</h3>
-      <div class="emotion-selector">
-        <span title="Triste">😢</span>
-        <span title="Esperanzado">😊</span>
-        <span title="Enojado">😡</span>
-        <span title="Confundido">😕</span>
-        <span title="En calma">😌</span>
-      </div>
+    <label for="email">📧 Tu correo (opcional)</label>
+    <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" />
 
-      <button style="margin-top:2rem" onclick="sellarCapsula()">🎁 Sellar mi cápsula</button>
+    <label for="carta">✉️ Carta para tu yo del futuro</label>
+    <textarea id="carta" name="carta" rows="5" placeholder="Querido yo del futuro..."></textarea>
 
-      <div id="sealMessage" style="display:none; margin-top:2rem; background:#fff8e1; border:2px solid #ffcb77; padding:1rem; border-radius:8px; text-align:center; font-weight:bold;">
-        ¡Tu cápsula ha sido sellada! 🌟 Puedes volver a abrirla cuando estés listo para recordarte lo fuerte que fuiste.
-      </div>
-    </article>
-  </div>
-</section>
+    <label for="pensamientos">💭 ¿Qué piensas seguido?</label>
+    <textarea id="pensamientos" name="pensamientos" rows="3" placeholder="Escribe tus pensamientos frecuentes..."></textarea>
 
-<style>
-  .capsula {
-    background: #ffffffcc;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #bbb;
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-    background-color: #eaf6f6;
-  }
+    <label for="esperanza">🌱 Un mensaje de esperanza</label>
+    <input type="text" id="esperanza" name="esperanza" placeholder="Todo pasará, tú puedes..." />
 
-  textarea, canvas {
-    width: 100%;
-    border: 2px dashed #98c1d9;
-    border-radius: 8px;
-    background-color: #f1faff;
-    padding: 1rem;
-    font-size: 1rem;
-  }
+    <label>🎨 Dibuja cómo te sientes</label>
+    <canvas id="drawCanvas"></canvas>
+    <div style="margin: 1rem 0;">
+      <input type="color" id="colorPicker" value="#3f51b5" />
+      <input type="range" id="brushSize" min="1" max="10" value="3" />
+      <button type="button" onclick="clearCanvas()">🧼 Borrar dibujo</button>
+    </div>
 
-  .canvas-tools, .emotion-selector {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin: 1rem 0;
-  }
+    <label>💖 ¿Cómo te sientes hoy?</label>
+    <div class="emotion-selector">
+      <span>😊</span><span>😢</span><span>😠</span><span>😕</span><span>😌</span>
+    </div>
 
-  .emotion-selector span {
-    cursor: pointer;
-    font-size: 2rem;
-    transition: transform 0.2s;
-  }
+    <button type="submit">🎁 Sellar mi cápsula</button>
+  </form>
 
-  .emotion-selector span:hover {
-    transform: scale(1.2);
-  }
-</style>
+  <div id="message">¡Tu cápsula ha sido sellada con amor y cuidado! 💌</div>
+</main>
 
 <script>
+  // Canvas
   const canvas = document.getElementById('drawCanvas');
   const ctx = canvas.getContext('2d');
-  let drawing = false;
+  let painting = false;
 
-  canvas.addEventListener('mousedown', () => drawing = true);
+  canvas.addEventListener('mousedown', () => painting = true);
   canvas.addEventListener('mouseup', () => {
-    drawing = false;
+    painting = false;
     ctx.beginPath();
   });
-  canvas.addEventListener('mouseout', () => drawing = false);
-
+  canvas.addEventListener('mouseout', () => painting = false);
   canvas.addEventListener('mousemove', draw);
 
   function draw(e) {
-    if (!drawing) return;
-    ctx.lineWidth = document.getElementById('brushSize').value;
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = document.getElementById('colorPicker').value;
+    if (!painting) return;
     const rect = canvas.getBoundingClientRect();
+    ctx.lineWidth = document.getElementById('brushSize').value;
+    ctx.strokeStyle = document.getElementById('colorPicker').value;
+    ctx.lineCap = 'round';
     ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
     ctx.stroke();
     ctx.beginPath();
@@ -102,7 +117,15 @@
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
-  function sellarCapsula() {
-    document.getElementById('sealMessage').style.display = 'block';
-  }
+  // Simulación de envío
+  document.getElementById('capsulaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('message').style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('message').scrollIntoView({ behavior: 'smooth' });
+    }, 200);
+  });
 </script>
+
+</body>
+</html>
