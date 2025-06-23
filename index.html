@@ -1,29 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Folleto Pedagógico – Aislamiento Inesperado (v2.0)</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-<style>
-  :root {
-    --primary: #a8dadc;
-    --secondary: #ffcb77;
-    --accent: #f28482;
-  }
-  body { padding: 1rem; }
-  nav { background: var(--primary); margin-bottom: 1rem; }
-  nav a { color: #333; font-weight: bold; }
-  .accordion h3 { cursor: pointer; background: var(--secondary); padding: .5rem; margin: 0; }
-  .accordion-content { display: none; padding: .5rem; background: #f9f9f9; border-left: 4px solid var(--accent); }
-  .accordion.active .accordion-content { display: block; }
-  .quiz { border: 1px solid var(--accent); padding: 1rem; border-radius: 8px; background: #fff; }
-  .quiz button { margin-top: .5rem; }
-  .quiz-feedback { margin-top: .5rem; font-weight: bold; }
-  .resources a { text-decoration: none; color: var(--accent); }
-  .progress { margin-bottom: 1rem; }
-  .progress span { margin-right: .5rem; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Folleto Pedagógico – Aislamiento Inesperado</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
 </head>
 <body>
 
@@ -32,179 +13,69 @@
   <ul>
     <li><a href="#intro">Inicio</a></li>
     <li><a href="#actividades">Actividades</a></li>
-    <li><a href="#juego">Mini-Juego</a></li>
     <li><a href="#recursos">Recursos</a></li>
   </ul>
 </nav>
 
 <main class="container">
 
-<section id="intro">
-  <h2>Aislamiento Inesperado – Caso Laura</h2>
-  <h3>Folleto Pedagógico para Docentes y Estudiantes</h3>
-  <p>Laura, de 10 años, se ha vuelto callada y retraída. ¿Cómo puede intervenir el docente de manera empática y abierta?</p>
-  <h4>Objetivos:</h4>
-  <ul>
-    <li>Reflexionar sobre emociones.</li>
-    <li>Fomentar la empatía y resiliencia.</li>
-    <li>Crear espacios de diálogo seguros.</li>
-    <li>Desarrollar habilidades de expresión.</li>
-  </ul>
-</section>
+  <section id="intro">
+    <hgroup>
+      <h2>Aislamiento Inesperado – Caso Laura</h2>
+      <h3>Folleto Pedagógico para Docentes y Estudiantes</h3>
+    </hgroup>
+    <p>Laura es una niña de 10 años, alegre y cercana a sus compañeros. Sin embargo, últimamente se muestra retraída. Este folleto propone un camino para acompañarla desde la escuela, cuidando lo emocional.</p>
 
-<section id="actividades">
-  <h2>Actividades del Taller</h2>
+    <h3>Objetivos del Taller</h3>
+    <ul>
+      <li>Reflexionar sobre emociones y aislamiento.</li>
+      <li>Fomentar empatía, resiliencia y autoconocimiento.</li>
+      <li>Crear espacios de diálogo seguros.</li>
+      <li>Desarrollar habilidades expresivas.</li>
+    </ul>
+  </section>
 
-  <div class="accordion">
-    <h3 onclick="toggleAccordion(this)">1. Rompehielo – “La isla”</h3>
-    <div class="accordion-content">
-      <p>Imagina despertar en una isla desierta. Reflexionemos:</p>
-      <ul>
-        <li>¿Qué harías los primeros días?</li>
-        <li>¿Qué emociones sentirías?</li>
-        <li>¿A quién extrañarías?</li>
-        <li>¿Cómo cuidarías tu mente?</li>
-      </ul>
-    </div>
-  </div>
+  <section id="actividades">
+    <h2>Actividades del Taller</h2>
 
-  <div class="accordion">
-    <h3 onclick="toggleAccordion(this)">2. Comprensión del aislamiento</h3>
-    <div class="accordion-content">
-      <ul>
-        <li>¿Qué es?</li>
-        <li>Causas comunes: mudanzas, duelo, salud...</li>
-        <li>Síntomas: tristeza, fatiga, evasión...</li>
-      </ul>
-    </div>
-  </div>
+    <h3>1. Rompehielo – “La isla”</h3>
+    <p>Imagina que despiertas en una isla desierta. ¿Qué harías? ¿Qué sentirías? ¿A quién extrañarías? Reflexiona con tus compañeros.</p>
 
-  <div class="accordion">
-    <h3 onclick="toggleAccordion(this)">3. Testimonio reflexivo</h3>
-    <div class="accordion-content">
-      <p>Leer o ver un testimonio real y discutir:</p>
-      <ul>
-        <li>¿Qué emociones aparecen?</li>
-        <li>¿Qué recursos usó esa persona?</li>
-        <li>¿Te identificas?</li>
-      </ul>
-    </div>
-  </div>
+    <h3>2. Comprensión del aislamiento</h3>
+    <ul>
+      <li>¿Qué es el aislamiento?</li>
+      <li>Causas comunes: duelo, mudanzas, salud, conflictos.</li>
+      <li>Síntomas emocionales y físicos: tristeza, fatiga, evasión.</li>
+    </ul>
 
-  <div class="accordion">
-    <h3 onclick="toggleAccordion(this)">4. Cápsula del tiempo</h3>
-    <div class="accordion-content">
-      <ul>
-        <li>Lo que más extrañas</li>
-        <li>Tus pensamientos frecuentes</li>
-        <li>Estrategias de autocuidado</li>
-        <li>Mensaje de esperanza al futuro yo</li>
-      </ul>
-    </div>
-  </div>
+    <h3>3. Testimonio</h3>
+    <p>Observa o lee el relato de una persona que vivió aislamiento. Identifica emociones y recursos que le ayudaron.</p>
 
-  <div class="accordion">
-    <h3 onclick="toggleAccordion(this)">5. Reflexión grupal</h3>
-    <div class="accordion-content">
-      <ul>
-        <li>¿Qué aprendí sobre mí?</li>
-        <li>¿Cómo puedo apoyar a otros?</li>
-        <li>¿Cómo me sentí?</li>
-      </ul>
-    </div>
-  </div>
+    <h3>4. Actividad central – Cápsula del tiempo</h3>
+    <p><strong>Realiza tu propia cápsula del tiempo</strong> escribiendo, dibujando o expresando tus emociones.</p>
+    <p><a href="capsula.html" role="button">Ir a la cápsula del tiempo 🚀</a></p>
 
-  <div class="accordion">
-    <h3 onclick="toggleAccordion(this)">6. Acción directa – “Te escucho, estoy aquí”</h3>
-    <div class="accordion-content">
-      <ul>
-        <li>¿Cómo te has sentido?</li>
-        <li>¿Quieres contarlo?</li>
-        <li>¿Qué piensas hacer?</li>
-      </ul>
-      <p>Ofrece opciones: hablar, dibujar o quedarse en silencio. Lo importante es que Laura sepa que está acompañada.</p>
-    </div>
-  </div>
+    <h3>5. Cierre grupal</h3>
+    <p>¿Qué aprendiste sobre ti? ¿Cómo acompañarías a alguien que se siente solo? ¿Cómo te sentiste hoy?</p>
 
-</section>
+    <h3>6. Acción directa – “Te escucho, estoy aquí”</h3>
+    <p>El docente ofrece un espacio privado para hablar con Laura, mostrando empatía y apertura. Puede ofrecer expresarse hablando, escribiendo o en silencio.</p>
+  </section>
 
-<section id="juego">
-  <h2>🎮 Mini-juego interactivo</h2>
-  <div class="quiz">
-    <p><strong>Imagina que notas que tu compañero/a está aislado/a. ¿Qué harías?</strong></p>
-    <button onclick="gameStep(1, 'A')">A) Ignorarlo: tal vez solo necesita tiempo.</button><br/>
-    <button onclick="gameStep(1, 'B')">B) Invitarlo a participar con calma.</button><br/>
-    <div id="feedback-1" class="quiz-feedback"></div>
-    <button id="next-1" style="display:none;" onclick="showNext(2)">Siguiente pregunta</button>
-    
-    <div id="q-2" style="display:none;">
-      <p><strong>Te sonríe y susurra que está bien. ¿Qué haces?</strong></p>
-      <button onclick="gameStep(2, 'A')">A) Continuar como si nada.</button><br/>
-      <button onclick="gameStep(2, 'B')">B) Ofrecer hablar en otro momento.</button><br/>
-      <div id="feedback-2" class="quiz-feedback"></div>
-      <button id="next-2" style="display:none;" onclick="showNext(3)">Siguiente</button>
-    </div>
-
-    <div id="q-3" style="display:none;">
-      <p><strong>¿Cómo calificas tu elección?</strong></p>
-      <button onclick="gameStep(3, 'A')">A) Bien: mostré empatía.</button><br/>
-      <button onclick="gameStep(3, 'B')">B) Podría mejorar.</button><br/>
-      <div id="feedback-3" class="quiz-feedback"></div>
-      <button id="finish" style="display:none;" onclick="finalFeedback()">Ver resumen</button>
-    </div>
-
-    <div id="final" class="quiz-feedback"></div>
-  </div>
-</section>
-
-<section id="recursos">
-  <h2>📚 Recursos de Apoyo</h2>
-  <ul class="resources">
-    <li><a href="https://escuelaypedagogia.educacionbogota.edu.co/miradas/orientacion-escolar-y-educacion-socio-emocional" target="_blank">Orientación Escolar y Educación Socioemocional (SED Bogotá)</a></li>
-    <li><a href="https://lcob-100.github.io/EMOCIONOMETRO/" target="_blank">Emocionómetro – Medidor emocional interactivo</a></li>
-    <li>Línea 106 – Atención psicológica gratuita</li>
-  </ul>
-</section>
+  <section id="recursos">
+    <h2>📚 Recursos de Apoyo</h2>
+    <ul>
+      <li><a href="https://escuelaypedagogia.educacionbogota.edu.co/miradas/orientacion-escolar-y-educacion-socio-emocional" target="_blank">🧭 Orientación Escolar y Educación Socioemocional</a></li>
+      <li><a href="https://lcob-100.github.io/EMOCIONOMETRO/" target="_blank">🎨 Emocionómetro Interactivo</a></li>
+      <li>☎️ Línea 106 – Atención emocional y psicológica gratuita</li>
+    </ul>
+  </section>
 
 </main>
 
 <footer class="container">
-  <small>Folleto interactivo · <a href="#">Contacto</a></small>
+  <small><a href="#intro">Volver arriba</a> • <a href="#recursos">Recursos</a></small>
 </footer>
-
-<script>
-function toggleAccordion(el) {
-  el.parentElement.classList.toggle('active');
-}
-
-function gameStep(q, choice){
-  const fb = document.getElementById(`feedback-${q}`);
-  if (q === 1){
-    if (choice==='A') fb.textContent = "¿Ignorar? Quizás no sea la mejor, pues podría empeorar.";
-    else fb.textContent = "Excelente, estás reconociendo y acercándote.";
-    document.getElementById(`next-1`).style.display = 'inline';
-  }
-  if (q === 2){
-    const fb2 = document.getElementById('feedback-2');
-    if (choice==='A') fb2.textContent = "Podría sentirse rechazado otra vez.";
-    else fb2.textContent = "Bien: das espacio y muestras respeto.";
-    document.getElementById('next-2').style.display = 'inline';
-  }
-  if (q === 3){
-    const fb3 = document.getElementById('feedback-3');
-    if (choice==='A') fb3.textContent = "Buen trabajo, integraste empatía.";
-    else fb3.textContent = "Está bien querer mejorar, estás en camino.";
-    document.getElementById('finish').style.display = 'inline';
-  }
-}
-
-function showNext(num){
-  document.getElementById(`q-${num}`).style.display = 'block';
-}
-function finalFeedback(){
-  document.getElementById('final').textContent = "¡Bien hecho! Enfatizar tu apoyo y escucha es crucial. Gracias por jugar y reflexionar 🌟";
-}
-</script>
 
 </body>
 </html>
