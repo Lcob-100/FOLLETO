@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parte 5 – Hablar con Laura</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <style>
+    body {
+      margin: 0;
+      background: #f8f9fb;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      padding: 2rem;
+    }
+    .contenedor {
+      max-width: 900px;
+      margin: auto;
+      background-color: #ffffffdd;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    blockquote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #81d4fa;
+      padding-left: 1rem;
+      margin: 1rem 0;
+    }
+    ul {
+      list-style: disc;
+      margin-left: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<main class="contenedor">
+  <h2>📄 Parte 5 – Hablar con Laura: Una conversación que no fuerza, pero acompaña</h2>
+  <blockquote>“Hay silencios que no buscan ocultarse, solo necesitan que alguien los mire sin prisa.”</blockquote>
+
+  <h3>🌼 ¿Por qué es importante hablar con Laura?</h3>
+  <p>
+    El taller ha abierto un espacio simbólico y colectivo, pero cada proceso emocional es único.
+    Acercarse a Laura no debe tener como fin obtener respuestas, sino mostrarle que su bienestar importa.
+    Este paso debe darse cuando el ambiente esté más sereno.
+  </p>
+
+  <h3>🤝 ¿Cómo iniciar el acercamiento?</h3>
+  <p>El lenguaje verbal y no verbal debe ser suave, sin presión:</p>
+  <ul>
+    <li>“Hola Laura. He notado que últimamente estás más callada y te quería decir que estoy aquí si necesitas hablar.”</li>
+    <li>“No quiero presionarte. Solo quiero que sepas que me importas y que estoy disponible.”</li>
+    <li>“También puedes decirme si prefieres otra forma de comunicarte o si quieres esperar.”</li>
+  </ul>
+
+  <h3>🌿 ¿Qué ofrecer en lugar de solo preguntar?</h3>
+  <p>Ofrece formas de expresión no verbal:</p>
+  <ul>
+    <li>Una nota anónima en un buzón del aula</li>
+    <li>Un dibujo que no deba explicar</li>
+    <li>Elegir un color o una tarjeta con emociones</li>
+    <li>Crear un símbolo para expresar cómo se siente ese día</li>
+  </ul>
+
+  <h3>🚦 Señales para saber si es momento de derivar</h3>
+  <p>Si el malestar persiste:</p>
+  <ul>
+    <li>Consultar con el equipo psico-orientador</li>
+    <li>Hablar con la familia con cuidado</li>
+    <li>No señalar ni exponer a Laura</li>
+  </ul>
+
+  <h3>❤️ Acompañar no siempre es hablar</h3>
+  <p>
+    Tal vez Laura no diga nada, solo mire o asienta con la cabeza. Eso también es comunicación.
+    Acompañar es estar, respetar sus tiempos y validarla incluso en silencio.
+  </p>
+</main>
+
+</body>
+</html>
