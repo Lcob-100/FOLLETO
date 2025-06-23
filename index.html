@@ -3,119 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Folleto Pedagógico Interactivo</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <title>Escuchar el Silencio – Folleto Plegable</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
   <style>
     body {
-      background: linear-gradient(135deg, #d6f0f5, #fce4ec);
+      margin: 0;
+      overflow-x: hidden;
       font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
     }
-    h1, h2, h3 {
-      color: #374785;
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #ffffffee;
+      backdrop-filter: blur(4px);
+      padding: 1rem;
+      z-index: 1000;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid #ccc;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .card {
-      background: #ffffffdd;
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-    }
-    .card h2 {
-      margin-top: 0;
-    }
-    section.content {
-      display: none;
-      margin-top: 2rem;
-      background: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .back-button {
-      margin-top: 1rem;
-      display: inline-block;
-      background: #98c1d9;
-      color: white;
+
+    nav button {
       padding: 0.5rem 1rem;
-      border-radius: 8px;
-      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      background: #e3f2fd;
+      color: #1a237e;
+      cursor: pointer;
     }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      color: #666;
+
+    nav button:hover {
+      background: #bbdefb;
+    }
+
+    .folleto {
+      display: flex;
+      width: 700%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    section {
+      flex: 0 0 100vw;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 6rem 2rem 2rem;
+      box-sizing: border-box;
+    }
+
+    section:nth-child(odd) {
+      background: #f5faff;
+    }
+
+    section:nth-child(even) {
+      background: #fffdf8;
+    }
+
+    iframe {
+      width: 100%;
+      height: 90vh;
+      border: none;
+      border-radius: 8px;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
 
-<main class="container">
-  <header style="text-align:center; margin-bottom:2rem;">
-    <h1>👋 ¡Bienvenid@!</h1>
-    <p>Este folleto pedagógico está diseñado para ayudarte a abordar el aislamiento emocional de tus estudiantes con herramientas prácticas, interactivas y empáticas.</p>
-  </header>
+<nav>
+  <button onclick="goTo(0)">🏠 Portada</button>
+  <button onclick="goTo(1)">📘 Caso Laura</button>
+  <button onclick="goTo(2)">🌱 Sentido</button>
+  <button onclick="goTo(3)">📚 Taller</button>
+  <button onclick="goTo(4)">📦 Cápsula</button>
+  <button onclick="goTo(5)">🤝 Hablar</button>
+  <button onclick="goTo(6)">🧠 Recomendaciones</button>
+</nav>
 
-  <div class="grid">
-    <div class="card" onclick="mostrar('actividades')">
-      <h2>📚 Actividades</h2>
-      <p>Explora dinámicas paso a paso para reflexionar y acompañar a los estudiantes. Incluye una cápsula del tiempo interactiva.</p>
-    </div>
-    <div class="card" onclick="mostrar('contacto')">
-      <h2>📞 Entidades de contacto</h2>
-      <p>Encuentra recursos y enlaces de apoyo emocional, líneas de orientación y sitios recomendados.</p>
-    </div>
-  </div>
-
-  <!-- Contenido de Actividades -->
-  <section id="actividades" class="content">
-    <h2>📚 Actividades del Taller</h2>
-    <ol>
-      <li><strong>Rompehielo:</strong> “La isla” – Imaginarse en una isla desierta para iniciar reflexión emocional.</li>
-      <li><strong>¿Qué es el aislamiento?</strong> – Comprensión de causas y síntomas.</li>
-      <li><strong>Testimonio reflexivo:</strong> Historias reales para generar empatía.</li>
-      <li><strong>Cápsula del tiempo:</strong> <a href="capsula.html" target="_blank">Ir a la cápsula 🚀</a></li>
-      <li><strong>Reflexión grupal:</strong> ¿Qué aprendí sobre mí?</li>
-      <li><strong>Acción directa:</strong> “Te escucho, estoy aquí” – Intervención empática del docente.</li>
-    </ol>
-    <a class="back-button" href="#" onclick="volver()">← Volver</a>
-  </section>
-
-  <!-- Contenido de Contacto -->
-  <section id="contacto" class="content">
-    <h2>🔗 Entidades de Contacto y Apoyo</h2>
-    <ul>
-      <li><a href="https://escuelaypedagogia.educacionbogota.edu.co/miradas/orientacion-escolar-y-educacion-socio-emocional" target="_blank">🧭 Orientación Escolar – SED Bogotá</a></li>
-      <li><a href="https://lcob-100.github.io/EMOCIONOMETRO/" target="_blank">🎨 Emocionómetro Interactivo</a></li>
-      <li>☎️ Línea 106 – Atención emocional y psicológica gratuita</li>
-    </ul>
-    <a class="back-button" href="#" onclick="volver()">← Volver</a>
-  </section>
-</main>
-
-<footer>
-  <p>Folleto pedagógico interactivo creado con 💜 para apoyar el bienestar escolar.</p>
-</footer>
+<div class="folleto" id="folleto">
+  <section><iframe src="parte1_portada.html"></iframe></section>
+  <section><iframe src="parte2_narrativa.html"></iframe></section>
+  <section><iframe src="parte3_sentido.html"></iframe></section>
+  <section><iframe src="parte4_taller.html"></iframe></section>
+  <section><iframe src="capsula.html"></iframe></section>
+  <section><iframe src="parte5_hablar.html"></iframe></section>
+  <section><iframe src="parte6_recomendaciones.html"></iframe></section>
+</div>
 
 <script>
-  function mostrar(id) {
-    document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function volver() {
-    document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+  function goTo(index) {
+    const folleto = document.getElementById("folleto");
+    folleto.style.transform = `translateX(-${index * 100}vw)`;
   }
 </script>
 
