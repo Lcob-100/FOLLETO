@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parte 6 – Recomendaciones para docentes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <style>
+    body {
+      margin: 0;
+      background: #f1f8f5;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2e3a3a;
+      padding: 2rem;
+    }
+    .contenedor {
+      max-width: 900px;
+      margin: auto;
+      background-color: #ffffffee;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #375a64;
+    }
+    blockquote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #aed581;
+      padding-left: 1rem;
+      margin: 1rem 0;
+    }
+    ul {
+      list-style: square;
+      margin-left: 2rem;
+    }
+    ul li {
+      margin-bottom: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+<main class="contenedor">
+  <h2>📄 Parte 6 – Recomendaciones generales para docentes: educar también es cuidar</h2>
+  <blockquote>
+    “A veces lo más pedagógico no está en enseñar algo nuevo, sino en acompañar lo que el otro aún no puede decir.”
+  </blockquote>
+
+  <h3>🧭 ¿Cómo podemos acompañar el aislamiento emocional en el aula?</h3>
+  <p>
+    Aquí te compartimos algunas claves para acoger el silencio con humanidad y sentido pedagógico:
+  </p>
+
+  <ul>
+    <li><strong>💬 Escucha más allá de las palabras:</strong> Observa gestos, actitudes y silencios. No siempre hace falta hablar, a veces basta con estar disponible.</li>
+    <li><strong>🤲 No interpretes demasiado rápido:</strong> Evita etiquetas o suposiciones. Escucha desde la empatía, no desde el juicio.</li>
+    <li><strong>🕊️ Permite múltiples formas de expresión:</strong> No todos se comunican igual. Escribe, dibuja, juega, mueve… todo vale.</li>
+    <li><strong>🌱 Crea una atmósfera emocional segura:</strong> Demuestra que es seguro hablar o callar sin ser juzgado. Modela la empatía en tus respuestas.</li>
+    <li><strong>👁️‍🗨️ No estés solo en esto:</strong> Acompañar no es tarea individual. Apóyate en el equipo institucional y la familia.</li>
+    <li><strong>✨ Valida el proceso más que el resultado:</strong> No importa si Laura habla o no. Importa que sienta que es bienvenida como está.</li>
+    <li><strong>🧩 Integra esta experiencia en tu práctica:</strong> No dejes que este taller sea algo aislado. Vincúlalo a tu día a día en clase con más espacios de cuidado.</li>
+  </ul>
+
+  <h3>📘 Cierre del folleto</h3>
+  <p>
+    Este proyecto no busca resolver el silencio de Laura. Busca escucharlo, reconocerlo y responder desde el respeto.
+    Porque en cada estudiante hay un universo. Y a veces, basta con que alguien esté dispuesto a asomarse con cuidado para que ese universo vuelva a abrirse.
+  </p>
+</main>
+
+</body>
+</html>
