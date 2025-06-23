@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <title>Folleto Pedagógico – Aislamiento Inesperado</title>
+  <style>
+    body { padding: 2rem; --padding-s: 1rem; }
+    .hidden { display: none; }
+    .toggle:after { content: " ▼"; }
+    .toggle[aria-expanded="true"]:after { content: " ▲"; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav class="container-fluid">
+      <ul><li><strong>Folleto Pedagógico</strong></li></ul>
+      <ul>
+        <li><a href="#intro">Inicio</a></li>
+        <li><a href="#actividades">Actividades</a></li>
+        <li><a href="#contacto" role="button">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="grid">
+      <section id="intro">
+        <hgroup><h2>Folleto Pedagógico</h2><h3>Aislamiento Inesperado</h3></hgroup>
+        <p>Laura es una niña de 10 años…</p>
+        <!-- Más contenido introductorio -->
+        <h3>Objetivos del Taller</h3>
+        <ul>
+          <li>Reflexionar sobre las emociones...</li>
+          <li>Fomentar empatía, autoconocimiento...</li>
+          <li>Crear espacios de diálogo seguros...</li>
+          <li>Desarrollar habilidades de expresión...</li>
+        </ul>
+      </section>
+
+      <section id="actividades">
+        <hgroup><h2>Actividades del Taller</h2><h3>Vamos paso a paso</h3></hgroup>
+        
+        <button class="toggle" aria-expanded="false" onclick="toggleSection('rompehielo')">1. Rompehielo – La isla</button>
+        <div id="rompehielo" class="hidden">
+          <p>Imaginen que despertaron en una isla desierta…</p>
+          <ul>
+            <li>¿Qué harías en los primeros días?</li>
+            <li>¿Qué emociones sentirías?</li>
+            <li>¿A quién extrañarías?</li>
+            <li>¿Cómo cuidarías tu mente?</li>
+          </ul>
+        </div>
+
+        <button class="toggle" aria-expanded="false" onclick="toggleSection('aislamiento')">2. Comprensión del aislamiento</button>
+        <div id="aislamiento" class="hidden">
+          <p>¿Qué es el aislamiento inesperado?</p>
+          <ul><li>Causas comunes: mudanzas, duelo, conflictos, salud…</li><li>Síntomas emocionales: tristeza, evasión, falta de energía…</li></ul>
+        </div>
+
+        <button class="toggle" aria-expanded="false" onclick="toggleSection('testimonio')">3. Historia – Testimonio</button>
+        <div id="testimonio" class="hidden">
+          <p>Video o fragmento de diario personal…</p>
+          <ul><li>¿Qué emociones se repiten?</li><li>¿Qué recursos ayudaron?</li><li>¿Te identificaste?</li></ul>
+        </div>
+
+        <button class="toggle" aria-expanded="false" onclick="toggleSection('capsula')">4. Actividad central – Cápsula del tiempo</button>
+        <div id="capsula" class="hidden">
+          <p>Carta, dibujo, poema o audio:</p>
+          <ul><li>Lo que más extraña</li><li>Sueños frecuentes</li><li>Estrategias de autocuidado</li><li>Un mensaje de esperanza</li></ul>
+        </div>
+
+        <button class="toggle" aria-expanded="false" onclick="toggleSection('reflexion')">5. Cierre – Reflexión grupal</button>
+        <div id="reflexion" class="hidden">
+          <ul><li>¿Qué aprendí hoy sobre mí?</li><li>¿Cómo acompañar a alguien aislado?</li><li>¿Cómo me sentí haciendo esto?</li></ul>
+        </div>
+
+        <button class="toggle" aria-expanded="false" onclick="toggleSection('accion')">6. Acción directa – Te escucho, estoy aquí</button>
+        <div id="accion" class="hidden">
+          <p>Espacio de conversación individual:</p>
+          <ul><li>¿Cómo te has sentido?</li><li>¿Quieres contarme algo?</li><li>¿Qué quisieras hacer con tus emociones?</li></ul>
+          <p>Permite elegir cómo expresarse: hablar, escribir, dibujar o silencio. Importa que sepa que no está sola.</p>
+        </div>
+      </section>
+    </div>
+
+    <section aria-label="Subscribe example">
+      <div class="container">
+        <article>
+          <hgroup><h2>¿Quieres más recursos?</h2><h3>Suscríbete para recibir materiales</h3></hgroup>
+          <form class="grid">
+            <input type="text" placeholder="Tu nombre…" aria-label="Nombre" required />
+            <input type="email" placeholder="Tu correo electrónico…" aria-label="Correo electrónico" required />
+            <button type="submit" onclick="event.preventDefault()">Suscribir</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <footer class="container">
+      <small><a href="#">Contacto</a> • <a href="#">Recursos adicionales</a></small>
+    </footer>
+  </main>
+
+  <script>
+    function toggleSection(id) {
+      const div = document.getElementById(id);
+      const btn = div.previousElementSibling;
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", !expanded);
+      div.style.display = expanded ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
