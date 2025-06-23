@@ -3,118 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Folleto Pedagógico – Aislamiento Inesperado</title>
+  <title>Folleto Pedagógico Interactivo</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
   <style>
     body {
-      background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+      background: linear-gradient(135deg, #d6f0f5, #fce4ec);
       font-family: 'Segoe UI', sans-serif;
-      color: #333;
+      padding: 2rem;
     }
     h1, h2, h3 {
       color: #374785;
     }
-    .section {
-      background-color: #ffffffcc;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: #ffffffdd;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    section.content {
+      display: none;
+      margin-top: 2rem;
+      background: #fff;
       border-radius: 12px;
       padding: 2rem;
-      margin-bottom: 2rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    nav {
-      background-color: #ffcb77;
-    }
-    nav a {
-      color: #222;
-    }
-    .btn-primary {
-      background-color: #98c1d9;
-      border: none;
-      color: #fff;
-      font-weight: bold;
-    }
-    .emoji-divider {
-      text-align: center;
-      font-size: 1.5rem;
-      margin: 2rem 0;
+    .back-button {
+      margin-top: 1rem;
+      display: inline-block;
+      background: #98c1d9;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
     }
     footer {
-      background-color: #e0f2f1;
-      padding: 1rem;
       text-align: center;
+      margin-top: 3rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-<nav class="container-fluid">
-  <ul><li><strong>Folleto Interactivo</strong></li></ul>
-  <ul>
-    <li><a href="#intro">Inicio</a></li>
-    <li><a href="#actividades">Actividades</a></li>
-    <li><a href="#recursos">Recursos</a></li>
-  </ul>
-</nav>
-
 <main class="container">
+  <header style="text-align:center; margin-bottom:2rem;">
+    <h1>👋 ¡Bienvenid@!</h1>
+    <p>Este folleto pedagógico está diseñado para ayudarte a abordar el aislamiento emocional de tus estudiantes con herramientas prácticas, interactivas y empáticas.</p>
+  </header>
 
-  <section class="section" id="intro">
-    <h2>👧 Caso Laura – Aislamiento Inesperado</h2>
-    <p>Laura, una niña de 10 años, alegre y participativa, empieza a aislarse en clase. Este folleto busca guiar al docente para intervenir desde la empatía y el cuidado emocional.</p>
-    <h3>🎯 Objetivos del Taller</h3>
-    <ul>
-      <li>Reflexionar sobre emociones en situaciones de aislamiento.</li>
-      <li>Fomentar la empatía, resiliencia y el autoconocimiento.</li>
-      <li>Generar espacios de diálogo seguros.</li>
-      <li>Desarrollar la expresión escrita y oral.</li>
-    </ul>
-  </section>
+  <div class="grid">
+    <div class="card" onclick="mostrar('actividades')">
+      <h2>📚 Actividades</h2>
+      <p>Explora dinámicas paso a paso para reflexionar y acompañar a los estudiantes. Incluye una cápsula del tiempo interactiva.</p>
+    </div>
+    <div class="card" onclick="mostrar('contacto')">
+      <h2>📞 Entidades de contacto</h2>
+      <p>Encuentra recursos y enlaces de apoyo emocional, líneas de orientación y sitios recomendados.</p>
+    </div>
+  </div>
 
-  <div class="emoji-divider">🟣🟢🔵🟡</div>
-
-  <section class="section" id="actividades">
+  <!-- Contenido de Actividades -->
+  <section id="actividades" class="content">
     <h2>📚 Actividades del Taller</h2>
-
-    <h3>1️⃣ Rompehielo – “La isla”</h3>
-    <p>Imagina que despiertas en una isla desierta. ¿Qué harías? ¿Qué emociones tendrías? ¿A quién extrañarías?</p>
-
-    <h3>2️⃣ Comprensión del aislamiento</h3>
-    <ul>
-      <li>¿Qué es el aislamiento inesperado?</li>
-      <li>Causas comunes: mudanzas, salud, duelo.</li>
-      <li>Síntomas emocionales: tristeza, evasión, cansancio.</li>
-    </ul>
-
-    <h3>3️⃣ Testimonio</h3>
-    <p>Observa un video o lee una historia real sobre el aislamiento. Reflexiona con tu grupo.</p>
-
-    <h3>4️⃣ Cápsula del tiempo – <em>Mi voz en el silencio</em></h3>
-    <p>Escribe, dibuja o representa cómo te sientes. Guarda tu experiencia.</p>
-    <a href="capsula.html" class="btn btn-primary">🚀 Ir a la cápsula del tiempo</a>
-
-    <h3>5️⃣ Cierre grupal</h3>
-    <p>Conversación guiada: ¿Qué aprendiste? ¿Cómo acompañarías a alguien?</p>
-
-    <h3>6️⃣ Acción directa – “Te escucho, estoy aquí”</h3>
-    <p>Docente crea un espacio de escucha individual, respetuoso y sin presiones.</p>
+    <ol>
+      <li><strong>Rompehielo:</strong> “La isla” – Imaginarse en una isla desierta para iniciar reflexión emocional.</li>
+      <li><strong>¿Qué es el aislamiento?</strong> – Comprensión de causas y síntomas.</li>
+      <li><strong>Testimonio reflexivo:</strong> Historias reales para generar empatía.</li>
+      <li><strong>Cápsula del tiempo:</strong> <a href="capsula.html" target="_blank">Ir a la cápsula 🚀</a></li>
+      <li><strong>Reflexión grupal:</strong> ¿Qué aprendí sobre mí?</li>
+      <li><strong>Acción directa:</strong> “Te escucho, estoy aquí” – Intervención empática del docente.</li>
+    </ol>
+    <a class="back-button" href="#" onclick="volver()">← Volver</a>
   </section>
 
-  <div class="emoji-divider">🌈✨💬📞</div>
-
-  <section class="section" id="recursos">
-    <h2>🔗 Recursos de Apoyo Emocional</h2>
+  <!-- Contenido de Contacto -->
+  <section id="contacto" class="content">
+    <h2>🔗 Entidades de Contacto y Apoyo</h2>
     <ul>
       <li><a href="https://escuelaypedagogia.educacionbogota.edu.co/miradas/orientacion-escolar-y-educacion-socio-emocional" target="_blank">🧭 Orientación Escolar – SED Bogotá</a></li>
       <li><a href="https://lcob-100.github.io/EMOCIONOMETRO/" target="_blank">🎨 Emocionómetro Interactivo</a></li>
-      <li>☎️ Línea 106 – Atención emocional gratuita</li>
+      <li>☎️ Línea 106 – Atención emocional y psicológica gratuita</li>
     </ul>
+    <a class="back-button" href="#" onclick="volver()">← Volver</a>
   </section>
-
 </main>
 
 <footer>
-  <small>Folleto pedagógico interactivo creado con 💜 para apoyar el bienestar escolar.</small>
+  <p>Folleto pedagógico interactivo creado con 💜 para apoyar el bienestar escolar.</p>
 </footer>
+
+<script>
+  function mostrar(id) {
+    document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function volver() {
+    document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+  }
+</script>
 
 </body>
 </html>
